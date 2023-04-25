@@ -3,6 +3,7 @@ BreweryDb is an Database of Brewery company
 
 I have used MVVM architecture .
 I used DI methoad and Repository to fetch the Api data.
+I used Composable for UI Design.
 
 
 <p float="center">

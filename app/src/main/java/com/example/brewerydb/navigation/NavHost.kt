@@ -15,7 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.brewerydb.ui.brewery.BreweryScreen
 import com.example.brewerydb.ui.breweryDetail.BreweryDetailScreen
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter", "SuspiciousIndentation")
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()

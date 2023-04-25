@@ -52,38 +52,39 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
     ) {
         Text(
             text = brewery.name,
-            color = Color.White,
+            color = Color(0xFFC1D6F8),
             fontSize = 25.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(43.dp)
-                .background(Color(0xFF5E81AC))
+                .height(50.dp)
+                .background(Color(0xFF22324C))
                 .clip(RoundedCornerShape(8.dp))
                 .padding(8.dp)
         )
         Text(
             text = brewery.id.toString(),
-            color = Color(0xFF5E81AC),
+            color = Color(0xFF22324C),
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 16.dp)
+                .padding(top = 34.dp)
+
         )
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 16.dp),
-            shape = RoundedCornerShape(8.dp),
+                .padding(top = 24.dp),
+            shape = RoundedCornerShape(0.dp),
             elevation = 8.dp,
-            backgroundColor = Color(0xFF88C0D0),
+            backgroundColor = Color(0xFF85ADEF),
         ) {
             Column(
                 modifier = Modifier
-                    .padding(16.dp)
+                    .padding(10.dp)
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -91,18 +92,26 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
                 ) {
                     Text(
                         text = "Address",
-                        color = Color.White,
+                        color = Color(0xFFC1D6F8),
                         fontSize = 25.sp,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier
                             .weight(1f)
-                            .padding(end = 8.dp)
+                            .padding(end = 0.dp, bottom = 8.dp)
+                            .height(50.dp)
+                            .background(Color(0xFF22324C))
+                            .clip(RoundedCornerShape(8.dp))
+                            .padding(start = 16.dp)
                     )
                     Text(
                         text = brewery.address_1,
-                        color = Color.White,
+                        color = Color(0xFFC1D6F8),
                         fontSize = 20.sp,
-                        modifier = Modifier.weight(1f),
+                        modifier = Modifier.weight(1f)
+                            .padding(bottom = 8.dp)
+                            .height(50.dp)
+                            .background(Color(0xFF22324C))
+                            .clip(RoundedCornerShape(8.dp)),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis,
                     )
@@ -114,19 +123,27 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
                 ) {
                     Text(
                         text = "City",
-                        color = Color.White,
+                        color = Color(0xFFC1D6F8),
                         fontSize = 25.sp,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier
                             .weight(1f)
-                            .padding(end = 8.dp)
+                            .padding(end = 0.dp,bottom = 8.dp)
+                            .height(50.dp)
+                            .background(Color(0xFF22324C))
+                            .clip(RoundedCornerShape(8.dp))
+                            .padding(start = 16.dp)
 
                     )
                         Text(
                             text = brewery.city,
-                            color = Color.White,
+                            color = Color(0xFFC1D6F8),
                             fontSize = 20.sp,
-                            modifier = Modifier.weight(1f),
+                            modifier = Modifier.weight(1f)
+                                .padding(bottom = 8.dp)
+                                .height(50.dp)
+                                .background(Color(0xFF22324C))
+                                .clip(RoundedCornerShape(8.dp)),
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis,
                         )
@@ -137,22 +154,60 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
                     ) {
                         Text(
                             text = "State",
-                            color = Color.White,
+                            color = Color(0xFFC1D6F8),
                             fontSize = 25.sp,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier
                                 .weight(1f)
-                                .padding(end = 8.dp)
+                                .padding(end = 0.dp,bottom = 8.dp)
+                                .height(50.dp)
+                                .background(Color(0xFF22324C))
+                                .clip(RoundedCornerShape(8.dp))
+                                .padding(start = 16.dp)
                         )
                         Text(
                             text = brewery.state,
-                            color = Color.White,
+                            color = Color(0xFFC1D6F8),
                             fontSize = 20.sp,
-                            modifier = Modifier.weight(1f),
+                            modifier = Modifier.weight(1f)
+                                .padding(bottom = 8.dp)
+                                .height(50.dp)
+                                .background(Color(0xFF22324C))
+                                .clip(RoundedCornerShape(8.dp)),
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis,
                         )
                     }
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                ) {
+                    Text(
+                        text = "Postcode",
+                        color = Color(0xFFC1D6F8),
+                        fontSize = 25.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(end = 0.dp)
+                            .height(50.dp)
+                            .background(Color(0xFF22324C))
+                            .clip(RoundedCornerShape(8.dp))
+                            .padding(start = 16.dp)
+                    )
+                    Text(
+                        text = brewery.postal_code,
+                        color = Color(0xFFC1D6F8),
+                        fontSize = 20.sp,
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(50.dp)
+                            .background(Color(0xFF22324C))
+                            .clip(RoundedCornerShape(8.dp)),
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                }
                 }
             }
         }
