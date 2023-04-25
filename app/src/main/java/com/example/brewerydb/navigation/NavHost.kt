@@ -34,6 +34,7 @@ fun AppNavigation() {
                     BreweryScreen(navController = navController)
                 }
                 composable("${Screen.BreweryDetailScreen.route}/{breweryId}") { backStackEntry ->
+                    Text(text = "Brewery Detail Screen")
                     Log.d("BreweryDetailScreen", "BreweryDetailScreen composable called")
                     targetScreen.value = Screen.BreweryDetailScreen
                     backStackEntry.arguments?.getString("breweryId")?.toLongOrNull()?.let { it1 ->

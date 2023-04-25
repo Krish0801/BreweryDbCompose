@@ -9,5 +9,7 @@ interface ApiRequest {
     suspend fun getBrewery() : ArrayList<BreweryItem>
 
     @GET(ApiDetails.END_POINT)
-    suspend fun getBreweryDetail(breweryId: Long) : ArrayList<BreweryItem>
+    suspend fun getBrewery1() : ArrayList<BreweryItem>
+
+
 }

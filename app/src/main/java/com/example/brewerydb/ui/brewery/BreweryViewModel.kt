@@ -1,6 +1,5 @@
 package com.example.brewerydb.ui.brewery
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.brewerydb.data.model.BreweryItem

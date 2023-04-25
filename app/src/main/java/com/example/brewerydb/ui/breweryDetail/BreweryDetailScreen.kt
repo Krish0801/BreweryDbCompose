@@ -26,7 +26,7 @@ fun BreweryDetailScreen(
 ) {
     Log.d("BreweryDetailScreen", "BreweryDetailScreen called with breweryId = $breweryId")
     val breweryDetailModel = hiltViewModel<BreweryDetailViewModel>()
-    val breweryDetails by breweryDetailModel.selectedBreweryItem.collectAsState()
+    val breweryDetails by breweryDetailModel.breweryDetail.collectAsState()
 
     breweryDetailModel.updateBreweryItem(breweryId)
 
@@ -99,7 +99,7 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
                             .padding(end = 8.dp)
                     )
                     Text(
-                        text = brewery.address_1 ?: "",
+                        text = brewery.address_1,
                         color = Color.White,
                         fontSize = 20.sp,
                         modifier = Modifier.weight(1f),
