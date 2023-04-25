@@ -17,7 +17,7 @@
         android:theme="@style/Theme.BreweryDb"
         tools:targetApi="tiramisu">
         <activity
-            android:name="com.example.brewerydb.ui.SplashActivity"
+            android:name=".ui.SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
