@@ -22,7 +22,7 @@ import com.example.brewerydb.data.model.BreweryItem
 
 @Composable
 fun BreweryDetailScreen(
-    breweryId: Long
+    breweryId: String
 ) {
     Log.d("BreweryDetailScreen", "BreweryDetailScreen called with breweryId = $breweryId")
     val breweryDetailModel = hiltViewModel<BreweryDetailViewModel>()
@@ -46,8 +46,8 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
 
     Column(
         modifier = Modifier
-            .fillMaxWidth()
-            .background(Color.Blue)
+            .fillMaxHeight()
+            .background(Color(0xFFC1D6F8))
             .padding(16.dp)
     ) {
         Text(

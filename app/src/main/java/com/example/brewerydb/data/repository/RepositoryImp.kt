@@ -8,7 +8,7 @@ class RepositoryImp @Inject constructor(
 ) : Repository{
 
     override suspend fun getBrewery() = apiRequest.getBrewery()
-    override suspend fun getBrewery1(breweryId: Long) = apiRequest.getBrewery()
+    override suspend fun getBrewery1(breweryId: String) = apiRequest.getBrewery()
 
 
 

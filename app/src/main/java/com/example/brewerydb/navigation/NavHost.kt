@@ -1,7 +1,6 @@
 package com.example.brewerydb.navigation
 
 import android.annotation.SuppressLint
-import android.util.Log
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -34,17 +33,15 @@ fun AppNavigation() {
                     BreweryScreen(navController = navController)
                 }
                 composable("${Screen.BreweryDetailScreen.route}/{breweryId}") { backStackEntry ->
-                    Text(text = "Brewery Detail Screen")
-                    Log.d("BreweryDetailScreen", "BreweryDetailScreen composable called")
                     targetScreen.value = Screen.BreweryDetailScreen
-                    backStackEntry.arguments?.getString("breweryId")?.toLongOrNull()?.let { it1 ->
+
                         BreweryDetailScreen(
-                            it1
+                            backStackEntry.arguments?.getString("breweryId").toString()
                         )
                     }
                 }
             }
-        })
+        )
 }
 
 @Composable

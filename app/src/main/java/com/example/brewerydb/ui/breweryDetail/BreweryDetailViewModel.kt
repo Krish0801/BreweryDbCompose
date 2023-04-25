@@ -17,7 +17,7 @@ class BreweryDetailViewModel @Inject constructor(
     val breweryDetail = MutableStateFlow(ArrayList<BreweryItem>(emptyList()))
 
 
-    fun updateBreweryItem(breweryId: Long) {
+    fun updateBreweryItem(breweryId: String) {
         viewModelScope.launch {
             breweryDetail.value = repository.getBrewery1(breweryId)
         }
