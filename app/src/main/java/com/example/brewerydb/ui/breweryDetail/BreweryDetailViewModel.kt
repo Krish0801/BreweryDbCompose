@@ -14,12 +14,13 @@ class BreweryDetailViewModel @Inject constructor(
     val repository: Repository
 ) : ViewModel() {
 
-    val breweryDetail = MutableStateFlow(ArrayList<BreweryItem>(emptyList()))
+    val breweryDetail = MutableStateFlow(BreweryItem())
 
 
     fun updateBreweryItem(breweryId: String) {
         viewModelScope.launch {
-            breweryDetail.value = repository.getBrewery1(breweryId)
+            val result = repository.getBreweryItem(breweryId)
+            breweryDetail.value = result
         }
     }
 

@@ -4,7 +4,7 @@ import com.example.brewerydb.data.model.BreweryItem
 
 interface Repository {
 
-    suspend fun getBrewery(): ArrayList<BreweryItem>
-    suspend fun getBrewery1(breweryId: String): ArrayList<BreweryItem>
+    suspend fun getBrewery(): List<BreweryItem>
+    suspend fun getBreweryItem(id : String): BreweryItem
 
 }

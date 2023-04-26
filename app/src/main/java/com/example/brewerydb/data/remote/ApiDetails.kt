@@ -4,4 +4,5 @@ object ApiDetails {
 
     const val BASE_URL = "https://api.openbrewerydb.org/v1/"
     const val END_POINT = "breweries/"
+    const val BREWERY_ID = "breweries/{id}"
 }

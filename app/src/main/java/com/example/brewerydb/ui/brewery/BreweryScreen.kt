@@ -36,7 +36,7 @@ fun BreweryScreen(navController: NavController) {
 
 @Composable
 private fun BreweryPage(
-    breweryList: ArrayList<BreweryItem>,
+    breweryList: List<BreweryItem>,
     navigateToDetails: (String) -> Unit
 ) {
     val backgroundcolor = Color(0xFFC1D6F8)
@@ -51,7 +51,7 @@ private fun BreweryPage(
 
 @Composable
 fun ListBrewery(
-    breweryList: ArrayList<BreweryItem>,
+    breweryList: List<BreweryItem>,
     navigateToDetails: (String) -> Unit,
 ) {
     val listState = rememberLazyListState()
@@ -104,7 +104,7 @@ fun ListBrewery(
                     )
 
                     Text(
-                        text = brewery.name,
+                        text = brewery.name ?: "",
                         color = textColor,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
@@ -119,7 +119,7 @@ fun ListBrewery(
                     )
 
                     Text(
-                        text = brewery.city,
+                        text = brewery.city ?: "N/A",
                         color = textColor,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)

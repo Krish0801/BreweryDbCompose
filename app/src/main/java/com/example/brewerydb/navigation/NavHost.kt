@@ -34,7 +34,6 @@ fun AppNavigation() {
                 }
                 composable("${Screen.BreweryDetailScreen.route}/{breweryId}") { backStackEntry ->
                     targetScreen.value = Screen.BreweryDetailScreen
-
                         BreweryDetailScreen(
                             backStackEntry.arguments?.getString("breweryId").toString()
                         )

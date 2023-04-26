@@ -13,15 +13,15 @@ import javax.inject.Inject
 @HiltViewModel
 class BreweryViewModel @Inject constructor(
     val repository: Repository
-): ViewModel() {
+) : ViewModel() {
 
-    val _brewery = MutableStateFlow(ArrayList<BreweryItem>(emptyList()))
-    var brewery : StateFlow<ArrayList<BreweryItem>> = _brewery
+    val _brewery = MutableStateFlow(listOf<BreweryItem>())
+    var brewery: StateFlow<List<BreweryItem>> = _brewery
 
-   init{
+    init {
 
-        viewModelScope.launch{
-            _brewery.value= repository.getBrewery()
+        viewModelScope.launch {
+            _brewery.value = repository.getBrewery()
         }
     }
 

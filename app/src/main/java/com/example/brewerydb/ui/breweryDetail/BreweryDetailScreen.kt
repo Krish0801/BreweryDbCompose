@@ -1,6 +1,5 @@
 package com.example.brewerydb.ui.breweryDetail
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,7 +23,6 @@ import com.example.brewerydb.data.model.BreweryItem
 fun BreweryDetailScreen(
     breweryId: String
 ) {
-    Log.d("BreweryDetailScreen", "BreweryDetailScreen called with breweryId = $breweryId")
     val breweryDetailModel = hiltViewModel<BreweryDetailViewModel>()
     val breweryDetails by breweryDetailModel.breweryDetail.collectAsState()
 
@@ -34,15 +32,8 @@ fun BreweryDetailScreen(
 }
 
 @Composable
-fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
+fun BreweryDetailPage(breweryDetails: BreweryItem) {
 
-    if (breweryDetails.isEmpty()) {
-        // Handle empty state
-        Text(text = "Brewery details not available")
-        return
-    }
-
-    val brewery = breweryDetails.first()
 
     Column(
         modifier = Modifier
@@ -51,7 +42,7 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
             .padding(16.dp)
     ) {
         Text(
-            text = brewery.name,
+            text = breweryDetails.name ?: "N/A",
             color = Color(0xFFC1D6F8),
             fontSize = 25.sp,
             fontWeight = FontWeight.Bold,
@@ -64,7 +55,7 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
                 .padding(8.dp)
         )
         Text(
-            text = brewery.id.toString(),
+            text = breweryDetails.id.toString(),
             color = Color(0xFF22324C),
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
@@ -104,7 +95,7 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
                             .padding(start = 16.dp)
                     )
                     Text(
-                        text = brewery.address_1,
+                        text = breweryDetails.address1  ?: "N/A",
                         color = Color(0xFFC1D6F8),
                         fontSize = 20.sp,
                         modifier = Modifier.weight(1f)
@@ -136,7 +127,7 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
 
                     )
                         Text(
-                            text = brewery.city,
+                            text = breweryDetails.city  ?: "N/A",
                             color = Color(0xFFC1D6F8),
                             fontSize = 20.sp,
                             modifier = Modifier.weight(1f)
@@ -166,7 +157,7 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
                                 .padding(start = 16.dp)
                         )
                         Text(
-                            text = brewery.state,
+                            text = breweryDetails.state  ?: "N/A",
                             color = Color(0xFFC1D6F8),
                             fontSize = 20.sp,
                             modifier = Modifier.weight(1f)
@@ -196,7 +187,7 @@ fun BreweryDetailPage(breweryDetails: List<BreweryItem>) {
                             .padding(start = 16.dp)
                     )
                     Text(
-                        text = brewery.postal_code,
+                        text = breweryDetails.postalCode  ?: "N/A",
                         color = Color(0xFFC1D6F8),
                         fontSize = 20.sp,
                         modifier = Modifier
