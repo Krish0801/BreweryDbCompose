@@ -18,7 +18,11 @@ class BreweryViewModel @Inject constructor(
     val _brewery = MutableStateFlow(listOf<BreweryItem>())
     var brewery: StateFlow<List<BreweryItem>> = _brewery
 
+
     init {
+        getBrewery()
+    }
+    fun getBrewery() {
 
         viewModelScope.launch {
             _brewery.value = repository.getBrewery()
